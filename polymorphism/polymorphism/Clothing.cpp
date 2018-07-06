@@ -13,20 +13,24 @@ Clothing::Clothing() {
 Clothing::~Clothing() {
 }
 
-void Clothing::setSize(string setSize) {
+void Clothing::printItem() {
 
+}
+
+void Clothing::setSize(string setSize) {
+	size = setSize;
 }
 
 void Clothing::setFabric(string setFabric) {
-
+	fabric = setFabric;
 }
 
 
-void Clothing::getSize() {
-
+string Clothing::getSize() {
+	return size;
 }
 
 
-void Clothing::getFabric() {
-
+string Clothing::getFabric() {
+	return fabric;
 }

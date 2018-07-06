@@ -15,18 +15,22 @@ Produce::~Produce() {
 
 }
 
+void Produce::printItem() {
+
+}
+
 void Produce::setWeight(double setWeight) {
-
+	weight = setWeight;
 }
 
-void Produce::setExpDate(Date setDate) {
-
+void Produce::setExpDate(string setDate) {
+	expDate = setDate;
 }
 
-void Produce::getWeight() {
-
+int Produce::getWeight() {
+	return weight;
 }
 
-void Produce::getExpDate() {
-
+string Produce::getExpDate() {
+	return expDate;
 }

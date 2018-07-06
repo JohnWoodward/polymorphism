@@ -2,7 +2,7 @@
 
 #include "Item.h";
 
-class Clothing
+class Clothing : public Item
 {
 public:
 	Clothing();
@@ -11,8 +11,9 @@ public:
 
 	void setSize(string setSize);
 	void setFabric(string setFabric);
-	void getSize();
-	void getFabric();
+	string getSize();
+	string getFabric();
+	void printItem();
 	
 	// TODO add implementation for print() 
 	/*

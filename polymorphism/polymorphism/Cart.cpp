@@ -1,7 +1,7 @@
-#include "stdafx.h"
+
+
 #include "Cart.h"
 
-#include <iostream>
 
 Cart::Cart()
 {
@@ -16,15 +16,15 @@ Cart::Cart(int cartSize) {
 		quantityItem[i] = 0; // Fill with zeroes
 	}
 
-	items = new Item[maxItem]();
+	items = new Item*[maxItem]();
 	Item* itemPtr;
-	Item item;
+	Item* item;
 	item.setName("ddd");
 	item.setPrice(333);
 	itemPtr = &item;
-	items = new Item[maxItem]();
+	*items = new Item[maxItem]();
 	for (int i = 0; i < maxItem; i++) {
-		items[i] = *itemPtr; // Intialize memory
+		*items[i] = *itemPtr; // Intialize memory
 	}
 }
 
@@ -35,7 +35,7 @@ Cart::~Cart() {
 }
 
 // Function to add item to cart
-void Cart::addItem(Item newItem, int quantity) {
+void Cart::addItem(Item* newItem, int quantity) {
 
 	bool cartBool = false;
 
@@ -90,7 +90,7 @@ void Cart::addItem(Item newItem, int quantity) {
 }
 
 // Function to remove item from cart
-void Cart::removeItem(Item itemToRemove) {
+void Cart::removeItem(Item* itemToRemove) {
 
 	//locate index of item
 	int index = 0;
@@ -127,7 +127,7 @@ void Cart::removeItem(Item itemToRemove) {
 }
 
 // Function to increase price of an item in the cart
-void Cart::increasePrice(Item changeItem, double priceIncrease) {
+void Cart::increasePrice(Item* changeItem, double priceIncrease) {
 
 	for (int i = 0; i < total; i++) {
 		if (items[i].getName() == changeItem.getName()) {
@@ -139,7 +139,7 @@ void Cart::increasePrice(Item changeItem, double priceIncrease) {
 }
 
 // Function to decrease price of an item in the cart
-void Cart::decreasePrice(Item changeItem, double amountDecreased) {
+void Cart::decreasePrice(Item* changeItem, double amountDecreased) {
 
 	for (int i = 0; i < total; i++) {
 

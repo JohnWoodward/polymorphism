@@ -13,18 +13,22 @@ Computer::Computer() {
 Computer::~Computer() {
 }
 
+void Computer::printItem() {
+
+}
+
 void Computer::setModel(string setModel) {
-
+	model = setModel;
 }
 
-void Computer::setMakeYear(int setMakeYear) {
-
+void Computer::setYear(int setMakeYear) {
+	makeYear = setMakeYear;
 }
 
-void Computer::getModel() {
-
+string Computer::getModel() {
+	return model;
 }
 
-void Computer::getMakeYear() {
-
+int Computer::getMakeYear() {
+	return makeYear;
 }

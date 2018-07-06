@@ -2,7 +2,7 @@
 
 #include "Item.h";
 
-class Computer
+class Computer : public Item
 {
 public:
 	Computer();
@@ -10,9 +10,11 @@ public:
 	~Computer();
 
 	void setModel(string setModel);
-	void setMakeYear(int setMakeYear);
-	void getModel();
-	void getMakeYear();
+	void setYear(int setMakeYear);
+	string getModel();
+	int getMakeYear();
+	
+	void printItem();
 
 
 	// TODO add implementation for print

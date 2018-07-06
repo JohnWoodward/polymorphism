@@ -3,7 +3,7 @@
 #include "Item.h"
 #include "Date.h"
 
-class Produce
+class Produce : public Item
 {
 public:
 	Produce();
@@ -11,9 +11,11 @@ public:
 	~Produce();
 
 	void setWeight(double setWeight);
-	void setExpDate(Date setDate);
-	void getWeight();
-	void getExpDate();
+	void setExpDate(string setDate);
+	int getWeight();
+	string getExpDate();
+
+	void printItem();
 
 	// TODO implement print()
 	/*
@@ -26,7 +28,7 @@ public:
 
 private:
 	double weight;
-	Date expDate; // TODO figure out if this needs to be a pointer
+	string expDate; // TODO figure out if this needs to be a pointer
 
 };
 
