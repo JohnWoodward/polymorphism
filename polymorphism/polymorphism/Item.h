@@ -1,5 +1,10 @@
 #pragma once
 
+#include "stdafx.h"
+
+
+
+
 class Item
 {
 private:
