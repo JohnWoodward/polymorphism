@@ -1,26 +1,31 @@
 #pragma once
 
+#include "stdafx.h"
 #include "Item.h"
+
+#include <iostream>
+
+using namespace std;
 
 
 class Cart
 {
 public:
 	Cart();
-	Cart(); // TODO add parameters for non default constructor
+	Cart(int cartSize);
 	~Cart();
 
-	void addItem();
-	void removeItem();
+	void addItem(Item* newItem, int quantity);
+	void removeItem(Item* itemToRemove);
+	void increasePrice(Item* changeItem, double priceIncrease);
+	void decreasePrice(Item* changeItem, double amountDecreased);
 	void printCart();
-	void increasPrice();
-	void decreasePrice();
 
 	
 
 private:
 	int maxItem;
-	Item* items;
+	Item** items;
 	int* quantityItem;
 	int total;
 
