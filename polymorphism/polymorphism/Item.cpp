@@ -1,17 +1,20 @@
 
+#include "stdafx.h"
 #include "Item.h"
 
 
 
 
 Item::Item() {
+	name = "";
+	price = 0;
 
 }
 
 
-Item::~Item() {
-
-}
+//Item::~Item() {
+//
+//}
 
 // Function to set the name of the item
 void Item::setName(string namePassed) {

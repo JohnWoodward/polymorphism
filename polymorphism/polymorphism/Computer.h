@@ -1,12 +1,15 @@
 #pragma once
+#include "stdafx.h"
+#include "Item.h"
+#include <string>
 
-#include "Item.h";
+using namespace std;
 
 class Computer : public Item
 {
 public:
 	Computer();
-	Computer(); // TODO Add parameters for non default constructor
+//	Computer(); // TODO Add parameters for non default constructor
 	~Computer();
 
 	void setModel(string setModel);

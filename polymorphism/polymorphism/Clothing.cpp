@@ -1,20 +1,29 @@
 #include "stdafx.h"
 #include "Clothing.h"
+#include <iostream>
+#include <iomanip>
+
 
 
 Clothing::Clothing() {
+	
 }
 
 // Paramatized clothing constructor
-Clothing::Clothing() {
-
-}
+//Clothing::Clothing() {
+//	size = "";
+//	fabric = "";
+//
+//}
 
 Clothing::~Clothing() {
 }
 
 void Clothing::printItem() {
-
+	cout << "Product name: " << name << endl
+		<< "Price: $" << fixed << setprecision(2) << price << endl
+		<< "Size: " << size << endl
+		<< "Fabric: " << fabric;
 }
 
 void Clothing::setSize(string setSize) {

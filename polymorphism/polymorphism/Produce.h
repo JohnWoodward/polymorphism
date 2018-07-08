@@ -1,18 +1,21 @@
 #pragma once
-
+#include "stdafx.h"
 #include "Item.h"
 #include "Date.h"
+#include <string>
+
+using namespace std;
 
 class Produce : public Item
 {
 public:
 	Produce();
-	Produce(); // TODO add parameters for non default constructor
+//	Produce(); // TODO add parameters for non default constructor
 	~Produce();
 
 	void setWeight(double setWeight);
 	void setExpDate(string setDate);
-	int getWeight();
+	double getWeight();
 	string getExpDate();
 
 	void printItem();

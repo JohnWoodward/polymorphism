@@ -1,12 +1,15 @@
 #pragma once
+#include "stdafx.h"
+#include "Item.h"
+#include <string>
 
-#include "Item.h";
+using namespace std;
 
 class Clothing : public Item
 {
 public:
 	Clothing();
-	Clothing(); // TODO add parameters for non default constructor
+//	Clothing(); // TODO add parameters for non default constructor
 	~Clothing();
 
 	void setSize(string setSize);

@@ -1,5 +1,5 @@
 
-
+#include "stdafx.h"
 #include "Cart.h"
 
 
@@ -16,16 +16,7 @@ Cart::Cart(int cartSize) {
 		quantityItem[i] = 0; // Fill with zeroes
 	}
 
-	items = new Item*[maxItem]();
-	Item* itemPtr;
-	Item* item;
-	item.setName("ddd");
-	item.setPrice(333);
-	itemPtr = &item;
-	*items = new Item[maxItem]();
-	for (int i = 0; i < maxItem; i++) {
-		*items[i] = *itemPtr; // Intialize memory
-	}
+	items = new Item*[maxItem];
 }
 
 Cart::~Cart() {
@@ -34,7 +25,7 @@ Cart::~Cart() {
 	delete[] quantityItem;
 }
 
-// Function to add item to cart
+ //Function to add item to cart
 void Cart::addItem(Item* newItem, int quantity) {
 
 	bool cartBool = false;
@@ -49,7 +40,7 @@ void Cart::addItem(Item* newItem, int quantity) {
 	if (total > 0) {
 
 		for (int i = 0; i < total; i++) {
-			if (items[i].getName() == newItem.getName()) {
+			if (items[i]->getName() == newItem->getName()) {
 				quantityItem[i] += quantity;
 				cartBool = true;
 			}
@@ -95,11 +86,11 @@ void Cart::removeItem(Item* itemToRemove) {
 	//locate index of item
 	int index = 0;
 	for (int i = 0; i < total; i++) {
-		if (items[i].getName() == itemToRemove.getName()) {
+		if (items[i]->getName() == itemToRemove->getName()) {
 			index = i;
 		}
 	}
-	Item*tempArr = new Item[maxItem];
+	Item** tempArr = new Item*[maxItem];
 	int *tempQuantity = new int[maxItem];
 
 	for (int i = 0; i < total; i++) {
@@ -130,8 +121,8 @@ void Cart::removeItem(Item* itemToRemove) {
 void Cart::increasePrice(Item* changeItem, double priceIncrease) {
 
 	for (int i = 0; i < total; i++) {
-		if (items[i].getName() == changeItem.getName()) {
-			items[i].setPrice(priceIncrease + items[i].getPrice());
+		if (items[i]->getName() == changeItem->getName()) {
+			items[i]->setPrice(priceIncrease + items[i]->getPrice());
 			return;
 		}
 	}
@@ -143,8 +134,8 @@ void Cart::decreasePrice(Item* changeItem, double amountDecreased) {
 
 	for (int i = 0; i < total; i++) {
 
-		if (items[i].getName() == changeItem.getName()) {
-			items[i].setPrice(items[i].getPrice() - amountDecreased);
+		if (items[i]->getName() == changeItem->getName()) {
+			items[i]->setPrice(items[i]->getPrice() - amountDecreased);
 			return;
 		}
 	}
@@ -153,18 +144,24 @@ void Cart::decreasePrice(Item* changeItem, double amountDecreased) {
 
 void Cart::printCart() {
 
+	cout << endl;
+
+	
+
+	
+
+
+
 	double totalPrice = 0;
 	for (int i = 0; i < total; i++) {
-		cout << quantityItem[i];
-		cout << " ";
-		cout << items[i].getName();
-		cout << " ";
-		cout << items[i].getPrice() * quantityItem[i];
-		cout << " ";
+		items[i]->printItem();
 		cout << endl;
-		totalPrice += items[i].getPrice() * quantityItem[i];
+		cout << "Quantity: " << quantityItem[i] << endl;
+		cout << "Total price: $" << items[i]->getPrice() * quantityItem[i] << endl << endl;
+		totalPrice += items[i]->getPrice() * quantityItem[i];
 
 	}
 	cout << "The total number of items in the cart is: " << total << endl;
-	cout << "The total price of the cart is: " << totalPrice << endl << endl;
+	cout << "The total price of the cart is: $" << totalPrice << endl << endl;
+	cout << "End of cart" << endl << endl << endl;
 }
