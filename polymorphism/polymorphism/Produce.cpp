@@ -4,16 +4,8 @@
 #include <iomanip>
 
 Produce::Produce() {
-
-}
-
-// Add parameters for non default constructor
-//Produce::Produce() {
-
-//}
-
-Produce::~Produce() {
-
+	weight = 0;
+	expDate = "";
 }
 
 void Produce::printItem() {

@@ -8,13 +8,7 @@
 Item::Item() {
 	name = "";
 	price = 0;
-
 }
-
-
-//Item::~Item() {
-//
-//}
 
 // Function to set the name of the item
 void Item::setName(string namePassed) {
@@ -35,3 +29,4 @@ string Item::getName() {
 double Item::getPrice() {
 	return price;
 }
+

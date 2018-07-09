@@ -5,14 +5,8 @@
 
 
 Computer::Computer() {
-}
-
-// Parameterized computer constructor
-//Computer::Computer() {
-//
-//}
-
-Computer::~Computer() {
+	model = "";
+	makeYear = 0;
 }
 
 void Computer::printItem() {

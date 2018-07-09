@@ -6,17 +6,8 @@
 
 
 Clothing::Clothing() {
-	
-}
-
-// Paramatized clothing constructor
-//Clothing::Clothing() {
-//	size = "";
-//	fabric = "";
-//
-//}
-
-Clothing::~Clothing() {
+	size = "";
+	fabric = "";
 }
 
 void Clothing::printItem() {

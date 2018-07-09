@@ -17,8 +17,7 @@ protected:
 	double price;
 
 public:
-	Item();
-	
+	Item();	
 
 	void setName(string namePassed);
 	void setPrice(double pricePassed);
@@ -28,7 +27,6 @@ public:
 	virtual void printItem() = 0;
 
 	// TODO add overload operator + and -
-	
-
+	// Cannot cleanly add an overload opperator to an abstract class
 };
 
